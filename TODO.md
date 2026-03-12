@@ -62,6 +62,7 @@ event Swipe:
 - Has a special event-like header, called menu
 
 ### example creation and usage
+```python
 
 import Menu (imports it, only import it if you need to use it)
 
@@ -69,15 +70,13 @@ MainMenu = Menu(
 "Title",
 [
 ["id1","Label", "SubLabel"],
-
-
+["id2","Label","SubLabel"]
 ]
 )
 
-
-
 menu MainMenu: (this code is referenced when a menu2 is launched, this one here is just called MainMenu, can be whatever)
     item1: (this is the ID of each menu item. This means that id's in the menu creation
+```
     
     
 
