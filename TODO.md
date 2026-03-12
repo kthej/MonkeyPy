@@ -31,37 +31,38 @@ event Update:
 
 ## Required headers (onUpdate, onLayout, etc)
 Stylized by 'event'
+```python
 
-event Update:    <-- This is mandatory to exist for all types of apps
-    code to run in the onUpdate loop
+event Update:    # This is mandatory to exist for all types of apps
+    #code to run in the onUpdate loop
     
 event Sleep:
-    code to run when the watch goes into sleep mode, for watch faces
+    #code to run when the watch goes into sleep mode, for watch faces
 
 event Wake:
-    code to run when the watch comes out of sleep mode, for watch faces
+    #code to run when the watch comes out of sleep mode, for watch faces
 
 event Key:
-    code to run when a button is pressed and released.
-    Key() will return which key was pressed
+    #code to run when a button is pressed and released.
+    #Key() will return which key was pressed
     
 event Touch:
     # code to run when the screen is touched.
-    Touch() returns the coordinates of where the screen was touched as tuple
-    only supports tapping.
+    #Touch() returns the coordinates of where the screen was touched as tuple
+    #only supports tapping.
 
 event Swipe:
-    code to run when the screen is swiped.
-    Swipe() returns the direction of the swipe as a direction like DIR.RIGHT.
-    Only supports up,down,left,right
-    
+    #code to run when the screen is swiped.
+    #Swipe() returns the direction of the swipe as a direction like DIR.RIGHT.
+    #Only supports up,down,left,right
+```
 ## The Menu Class
 
 - Only does Menu2
 - is built as a class, requiring importing
 - Has a special event-like header, called menu
 
-### example creation and usage
+### Menu example creation and usage
 ```python
 
 import Menu (imports it, only import it if you need to use it)
@@ -74,10 +75,25 @@ MainMenu = Menu(
 ]
 )
 
-menu MainMenu: (this code is referenced when a menu2 is launched, this one here is just called MainMenu, can be whatever)
+menu MainMenu: #this code is referenced when a menu2 is launched, this one here is just called MainMenu, can be whatever
     item1: (this is the ID of each menu item. This means that id's in the menu creation
 ```
+## Special Input modes
+- Other special select options
+- Text Input
+- Yes / No (for confirmation)
+- Number Picker
+- Date Picker
+- Time Picker
+- Multiple Choice
+handled by Input class
+## Example usage
+
+```python
+event update:
     
+
+```
     
 
 
