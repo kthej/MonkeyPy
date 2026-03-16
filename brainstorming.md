@@ -11,6 +11,8 @@ Toybox.System -> Sys
 Toybox.Application.Storage -> Store
 Toybox.Graphics -> Draw
 Toybox.Sensors -> Sense
+Toybox.WatchUi -> Screen
+
 Graphics.COLOR_COLOR -> COLOR.RED
 Graphics.TEXT_JUSTIFY_RIGHT -> JUSTIFY.RIGHT
 
@@ -23,6 +25,7 @@ Example: COLOR.RED
 ## Misc
 String concantenation and other python native things are not native in MonkeyC, so special functions will be made accordingly and called whenever a python type item is called
 example: an f-string will become Lang.format
+
 ## Examples
 
 import Draw
@@ -49,6 +52,9 @@ event Key:
     #code to run when a button is pressed and released.
     #Key() will return which key was pressed
     
+event Settings:
+    # called after user opens the settings, either holding up or back, depending on watch model
+
 event Touch:
     # code to run when the screen is touched.
     #Touch() returns the coordinates of where the screen was touched as tuple
@@ -89,6 +95,7 @@ menu MainMenu: #this code is referenced when a menu2 is launched, this one here 
 ```
 
 ## Special Input modes
+
 - Other special select options, other than menu
 - Text Input
 - Yes / No (for confirmation)
@@ -118,6 +125,7 @@ event Update:
 
 
 ## Resources
+
 - Some watches have different shapes, we need to handle resource management for different devices
 - Layouts, graphics, anything, are all handled in a single file, called the config file.
 - Variables are called with the Config class
@@ -143,7 +151,7 @@ config Dimensions 245 245: # for layouts of specific dimensions
 
 #usage in main code block:
 import Config
-
+import Draw
 Config.path = "path to file of config" # this is so you can tell where to put the config file.
 
 event Update:
@@ -170,6 +178,7 @@ just open(file) to access the image. This will be the passing for things like bi
 
 All Monkey C native classes are turned into simpler classes (Activity.Sensor -> Sense), but all retain capital first letter, lowercase rest.
 Importing other files must include the file extension.
+This is not a convention, the transpiler will not allow importing files without the extension name
 
 ```python
 import Config.mpy #is allowed and the only way to import other .mpy files.
